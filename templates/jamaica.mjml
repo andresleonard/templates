@@ -1,0 +1,141 @@
+<mjml>
+  <mj-head>
+
+    <mj-font name="Montserrat" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&amp;display=swap">
+    </mj-font>
+    <mj-attributes>
+      <mj-text align="center" color="#6e8e9d" font-family="Montserrat, Helvetica, Arial, Verdana, Trebuchet MS" />
+      <mj-section background-color="#fff" />
+      <mj-all font-family="Montserrat, Helvetica, Arial, Verdana, Trebuchet MS" />
+    </mj-attributes>
+    <mj-style>
+      @media only screen and (max-width:480px) {
+        .mb__text__contact div a {
+          font-size: 12px !important;
+        }
+
+        .mb_text_footer div p {
+          font-size: 12px !important;
+        }
+
+        .mb__section__tel table td {
+          padding-top: 5px !important;
+          padding-bottom: 5px !important;
+        }
+
+        .mobile-tyc div p {
+          font-size: 10px !important;
+          padding: 0px 0px !important;
+          line-height: 11px !important;
+          text-align: justify !important;
+        }
+
+        .promotion-cart img {
+          width: 90% !important;
+          margin-left: 8px;
+        }
+
+        .promotion-house img {
+          width: 85% !important;
+        }
+
+        .promotion {
+          padding: 0px !important;
+        }
+
+        .promotion table {
+          width: 85% !important;
+        }
+
+        div {
+          text-align: center !important;
+        }
+
+        .footer-image {
+          display: none !important;
+        }
+
+        .promotion-section {
+          text-align: -webkit-center !important;
+          text-align-last: center !important;
+          padding: 0px !important;
+        }
+
+        .nav-menu {
+          border-right: none !important;
+          padding: 0px 25px 10px !important;
+        }
+
+        .nav-head {
+          padding-bottom: 25px !important;
+        }
+
+      }
+
+      /* END RESPONSIVE MOBILE  */
+      .nav-menu {
+        border-right: 2px solid white;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    </mj-style>
+  </mj-head>
+  <mj-body background-color="#fff">
+
+    <mj-section padding="0px 0px 0px">
+      <mj-column>
+        <mj-image width="600px" src="https://s3.amazonaws.com/imagesrepository.icommarketing.com/ImagesRepo/NDAwLTYzMi1kZWNhbWVyb25jbw2/632/Mailing/JA/2022/Noviembre/30/v2/Mail-30-NOV-JAM_01.gif" alt="" href="#promociones" padding="0px">
+        </mj-image>
+      </mj-column>
+    </mj-section>
+
+    <!--Contacto Jamaica-->
+    <mj-hero mode="fluid-height" background-width="600px" background-height="60px" background-color="#2a1e5b" padding="0" css-class="background">
+      <mj-text padding="10px" color="#ffffff" align="center" font-size="14px" font-weight="600" css-class="mb_text_footer">
+        <p style="text-transform:uppercase;margin:0;border:0;padding:0; "><a href="#promociones" target="_blank" style="text-decoration:none;color:#FFF;vertical-align:middle;">book your next destination at <span style="text-decoration:underline;">www.decameron.com</span></a>
+        </p>
+
+
+      </mj-text>
+
+    </mj-hero>
+    <mj-section padding-top="40px" background-color="#2a1e5b" css-class="mb__section__tel">
+      <mj-group>
+        <mj-column css-class="footer-contact">
+          <mj-image width="40px" padding="0px" src="https://s3.amazonaws.com/imagesrepository.icommarketing.com/ImagesRepo/NDAwLTYzMi1kZWNhbWVyb25jbw2/632/Mailing/telefono-white.png" href="tel:+8769735600" target="_Blank" />
+          <mj-text align="center" color="#fff" font-weight="bold" text-transform="uppercase" font-size="16px" css-class="mb__text__contact">
+            <a href="tel:+8769735600" target="_Blank" style="text-decoration:none; color:#fff;">CALL CENTER<br>876 973 5600</a>
+          </mj-text>
+        </mj-column>
+        <mj-column>
+          <mj-image width="40px" padding="0px" src="https://s3.amazonaws.com/imagesrepository.icommarketing.com/ImagesRepo/NDAwLTYzMi1kZWNhbWVyb25jbw2/632/Mailing/email-white.png" href="mailto:localmarket.jam@decameron.com" target="_Blank" />
+          <mj-text align="center" color="#fff" font-weight="bold" text-transform="uppercase" font-size="12px" css-class="mb__text__contact">
+            <a href="mailto:localmarket.jam@decameron.com" target="_Blank" style="text-decoration:none; color:#fff;" css-class="mb__text__contact"><span style="font-size:16px;">EMAIL</span><br>LOCALMARKET.JAM@DECAMERON.COM</a>
+          </mj-text>
+        </mj-column>
+      </mj-group>
+    </mj-section>
+    <!--Contacto Jamaica-->
+    <mj-section background-color="#2a1e5b" padding="0px">
+      <mj-column>
+        <mj-text align="center" font-family="Montserrat, Helvetica, Arial, sans-serif" color="#fff" css-class="mobile-tyc">
+          <p>
+            tyc
+          </p>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#2a1e5b" padding="15px 0px">
+      <mj-group>
+        <mj-column>
+          <mj-image width="125px" padding="0" src="https://s3.amazonaws.com/imagesrepository.icommarketing.com/ImagesRepo/NDAwLTYzMi1kZWNhbWVyb25jbw2/632/logosecure/logo_secure.png" href="#promociones" target="_Blank" />
+        </mj-column>
+        <mj-column>
+          <mj-image width="125px" padding="0" src="https://www.decameron.com/images/logos/logo-decameron-all-inclusive.png" href="#promociones" target="_Blank" />
+        </mj-column>
+      </mj-group>
+    </mj-section>
+  </mj-body>
+</mjml>

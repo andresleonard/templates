@@ -1,0 +1,160 @@
+<mjml>
+  <mj-head>
+
+    <mj-font name="Montserrat" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&amp;display=swap">
+    </mj-font>
+    <mj-attributes>
+      <mj-text align="center" color="#6e8e9d" font-family="Montserrat, Helvetica, Arial, Verdana, Trebuchet MS" />
+      <mj-section background-color="#fff" />
+      <mj-all font-family="Montserrat, Helvetica, Arial, Verdana, Trebuchet MS" />
+    </mj-attributes>
+    <mj-style>
+      @media only screen and (max-width:480px) {
+        .mb__text__contact div a {
+          font-size: 12px !important;
+        }
+
+        .mb_text_footer div p {
+          font-size: 12px !important;
+        }
+
+        .mb__section__tel table td {
+          padding-top: 5px !important;
+          padding-bottom: 5px !important;
+        }
+
+        .mobile-tyc div p {
+          font-size: 10px !important;
+          padding: 0px 0px !important;
+          line-height: 11px !important;
+          text-align: justify !important;
+        }
+
+        .promotion-cart img {
+          width: 90% !important;
+          margin-left: 8px;
+        }
+
+        .promotion-house img {
+          width: 85% !important;
+        }
+
+        .promotion {
+          padding: 0px !important;
+        }
+
+        .promotion table {
+          width: 85% !important;
+        }
+
+        div {
+          text-align: center !important;
+        }
+
+        .footer-image {
+          display: none !important;
+        }
+
+        .promotion-section {
+          text-align: -webkit-center !important;
+          text-align-last: center !important;
+          padding: 0px !important;
+        }
+
+        .nav-menu {
+          border-right: none !important;
+          padding: 0px 25px 10px !important;
+        }
+
+        .nav-head {
+          padding-bottom: 25px !important;
+        }
+
+        .text-main p {
+          font-size: 13px !important;
+
+        }
+
+      }
+
+      /* END RESPONSIVE MOBILE  */
+      .nav-menu {
+        border-right: 2px solid white;
+      }
+
+      a {
+        text-decoration: none;
+        color: #ffffff;
+
+      }
+    </mj-style>
+  </mj-head>
+  <mj-body background-color="#eee">
+
+    <mj-section padding="0px">
+      <mj-column>
+        <mj-image width="600px" src="https://s3.amazonaws.com/imagesrepository.icommarketing.com/ImagesRepo/NDAwLTYzMi1kZWNhbWVyb25jbw2/632/Mailing/CR/2022/Diciembre/02/Mail-02-DIC-CR_01.gif" alt="" padding="0px" href="#promociones">
+        </mj-image>
+      </mj-column>
+    </mj-section>
+
+    <!--Contacto Costa Rica-->
+    <mj-hero mode="fluid-height" background-width="600px" background-height="67px" background-color="#2A1E5B" padding="10px 0px">
+      <mj-text padding="0px" color="#ffffff" align="center" font-size="16px" font-weight="bold" css-class="mb_text_footer">
+        <p style="text-transform:uppercase;">
+
+          <a href="#promociones" target="_blank" style="text-decoration:none;color:#FFF;vertical-align:middle;">RESERVA TU DESTINO EN <span style="text-decoration:underline;">www.decameron.com</span></a>
+        </p>
+
+
+      </mj-text>
+
+    </mj-hero>
+    <mj-section padding-top="40px" background-color="#2A1E5B" css-class="mb__section__tel">
+      <mj-group>
+        <mj-column css-class="footer-contact">
+          <mj-image width="40px" padding="0px" src="https://s3.amazonaws.com/imagesrepository.icommarketing.com/ImagesRepo/NDAwLTYzMi1kZWNhbWVyb25jbw2/632/Mailing/telefono-white.png" href="tel:+50622917373" />
+
+          <mj-text align="center" color="#fff" font-weight="bold" text-transform="uppercase" font-size="14px" css-class="mb__text__contact">
+            <a href="tel:+50622917373" target="_Blank" style="text-decoration:none; color:#fff;">contact center<br>+506 2291 7373</a>
+          </mj-text>
+        </mj-column>
+
+        <mj-column>
+          <mj-image width="65px" padding="0px" src="https://s3.amazonaws.com/imagesrepository.icommarketing.com/ImagesRepo/NDAwLTYzMi1kZWNhbWVyb25jbw2/632/Mailing/CECA/2021/Agosto/27082021/mail-27-CR_03.png" href="https://www.decameron.com/es/ceca-contactanos#centroamerica-y-el-caribe" />
+
+          <mj-text align="center" color="#fff" font-weight="bold" text-transform="uppercase" font-size="14px" css-class="mb__text__contact">
+            <a href="https://www.decameron.com/es/ceca-contactanos#centroamerica-y-el-caribe" target="_Blank" style="text-decoration:none; color:#fff;">contáctanos<br>haz click aquí</a>
+          </mj-text>
+        </mj-column>
+        <mj-column>
+          <mj-image width="40px" padding="0px" src="https://s3.amazonaws.com/imagesrepository.icommarketing.com/ImagesRepo/NDAwLTYzMi1kZWNhbWVyb25jbw2/632/Mailing/whatsapp-white.png" href="https://wa.me/50664900013" />
+
+          <mj-text align="center" color="#fff" font-weight="bold" text-transform="uppercase" font-size="14px" css-class="mb__text__contact">
+            <a href="https://wa.me/50664900013" target="_Blank" style="text-decoration:none; color:#fff;">whatsapp<br>Cotiza aquí</a>
+          </mj-text>
+        </mj-column>
+      </mj-group>
+    </mj-section>
+    <!--Contacto Costa Rica-->
+    <mj-section background-color="#2A1E5B" padding="0px">
+      <mj-column>
+        <mj-text align="center" font-family="Montserrat, Helvetica, Arial, sans-serif" color="#fff" line-height="16px" css-class="mobile-tyc">
+          <p>
+            tyc
+          </p>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#2A1E5B" padding="15px 0px">
+      <mj-group>
+        <mj-column>
+          <mj-image width="125px" padding="0" src="https://s3.amazonaws.com/imagesrepository.icommarketing.com/ImagesRepo/NDAwLTYzMi1kZWNhbWVyb25jbw2/632/logosecure/logo_secure.png" href="#promociones" target="_Blank" />
+        </mj-column>
+        <mj-column>
+          <mj-image width="125px" padding="0" src="https://www.decameron.com/images/logos/logo-decameron-all-inclusive.png" href="#promociones" target="_Blank" />
+        </mj-column>
+      </mj-group>
+    </mj-section>
+  </mj-body>
+</mjml>
