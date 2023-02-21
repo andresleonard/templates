@@ -11,7 +11,7 @@ const listOfTemplates : vscode.QuickPickItem[] = [
 	{label: 'honduras corporativo'},
 	{label: 'salvador corporativo'},
 	{label: 'colombia'},
-	{label: 'costaRica'},
+	{label: 'costa rica'},
 	{label: 'dgs'},
 	{label: 'dgs español'},
 	{label: 'ecuador'},
@@ -102,38 +102,50 @@ export function activate(context: vscode.ExtensionContext) {
 		//escoger carpeta	
 		const selectFolder = await vscode.window.showQuickPick(foldersCurrtentWorkspace, {placeHolder: 'Selecciona la capeta destino'});
 
+		let template : any;
+		let texto : any;
+
 		//escoger plantilla
-		const template = await vscode.window.showQuickPick(listOfTemplates,{placeHolder: 'Seleccione la plantilla'});
+		if(selectFolder !== undefined){
+			template = await vscode.window.showQuickPick(listOfTemplates,{placeHolder: 'Seleccione la plantilla'});
+			if(template !== undefined){
+				//poner numero del día		
+					texto = await vscode.window.showInputBox({
+						placeHolder: 'dia del mail',
+						//prompt: 'agregar dia'
+				});
+			}
+		} 
 
-		//poner numero del día		
-		const texto = await vscode.window.showInputBox({
-				placeHolder: 'dia del mail',
-				//prompt: 'agregar dia'
-		});
 		
-		//validate if file current exits
-		
-		if (selectFolder!.label === 'sin carpeta destino') {
-			dest = "/" + template!.label + texto + ".mjml";
-		}else{
-			dest = selectFolder!.label + "/" + template!.label + texto + ".mjml";
-		}
 
-		//ejecutar
-		copyFile(vscode, context, testChannel, '/templates/' + template!.label + '.mjml', dest, function(err : any, res : any) {});
-
-		//open file
-		const files = await vscode.workspace.findFiles(`**/${template!.label + texto + ".mjml"}`);
-		if (files.length > 0) {
-			const document = await vscode.workspace.openTextDocument(files[files.length - 1]);
-			await vscode.window.showTextDocument(document);
-			vscode.commands.executeCommand('mjml.previewToSide');
-		} else {
-			vscode.window.showInformationMessage(`No se pudo abri el archivo "${template!.label + texto + ".mjml"}". (reportar error)`);
-		}
+		if (selectFolder !== undefined && template !== undefined && texto !== undefined) {
+			//validate if file current exits
 			
-		// Display a message box to the user
-		vscode.window.showInformationMessage(template!.label + " creado");
+			if (selectFolder!.label === 'sin carpeta destino') {
+				dest = "/" + template!.label + texto + ".mjml";
+			}else{
+				dest = selectFolder!.label + "/" + template!.label + texto + ".mjml";
+			}
+	
+			//ejecutar
+			copyFile(vscode, context, testChannel, '/templates/' + template!.label + '.mjml', dest, function(err : any, res : any) {});
+	
+			//open file
+			const files = await vscode.workspace.findFiles(`**/${template!.label + texto + ".mjml"}`);
+			if (files.length > 0) {
+				const document = await vscode.workspace.openTextDocument(files[files.length - 1]);
+				await vscode.window.showTextDocument(document);
+				vscode.commands.executeCommand('mjml.previewToSide');
+			} else {
+				vscode.window.showInformationMessage(`No se pudo abri el archivo "${template!.label + texto + ".mjml"}". (reportar error)`);
+			}
+				
+			// Display a message box to the user
+			vscode.window.showInformationMessage(template!.label + " creado");
+			
+		}
+
 	});
 
 	context.subscriptions.push(disposable);
