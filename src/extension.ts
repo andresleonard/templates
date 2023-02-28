@@ -1,26 +1,43 @@
 import * as vscode from 'vscode';
 import * as fs from 'fs';
 import * as pathh from 'path';
+import { performance } from 'perf_hooks';
+
+//webview toolkit
+// import { provideVSCodeDesignSystem, vsCodeOption, vsCodeDropdown } from "@vscode/webview-ui-toolkit";
+// provideVSCodeDesignSystem().register(vsCodeOption(), vsCodeDropdown());
 
 const listOfTemplates : vscode.QuickPickItem[] = [
-	{label: 'agencias ceca'},
-	{label: 'guatemala'},
-	{label: 'honduras'},
-	{label: 'salvador'},
-	{label: 'guatemala corporativo'},
-	{label: 'honduras corporativo'},
-	{label: 'salvador corporativo'},
+	{label: 'agenciasCeca'},
 	{label: 'colombia'},
-	{label: 'costa rica'},
+	{label: 'costaRica'},
+	{label: 'dgsEspañol'},
 	{label: 'dgs'},
-	{label: 'dgs español'},
-	{label: 'ecuador'},
+	{label: 'guatemalaCorporativo'},
+	{label: 'guatemala'},
+	{label: 'hondurasCorporativo'},
+	{label: 'honduras'},
 	{label: 'jamaica'},
 	{label: 'mexico'},
+	{label: 'panamaAgencia'},
 	{label: 'panama'},
-	{label: 'panama agencia'},
 	{label: 'peru'},
+	{label: 'ecuador'},
+	{label: 'salvadorCorporativo'},
+	{label: 'salvador'},
 ];
+
+
+function options( a : any){
+
+	let option : String;
+
+	a.forEach((element: { label: string; }) => {
+		option += "<vscode-option>" + element.label + "</vscode-option>";
+	});
+
+	return option!;
+}
 
 //functions
 //copy template
@@ -49,6 +66,7 @@ async function copyFile(
 	} catch (err) {
 	  outputChannel.appendLine(`ERROR: ${err}`);
 	  callBack(err, false);
+	  console.log(err);
 	}
   }
 
@@ -85,6 +103,13 @@ function listOfFolders(path : string){
 
 	return newList;
 }
+async function openFile( template : string, texto : string ){;
+
+	const files = await vscode.workspace.findFiles(`**/${ template + texto + ".mjml"}`);
+	const document = await vscode.workspace.openTextDocument(files[files.length - 1]);
+	await vscode.window.showTextDocument(document);
+	vscode.commands.executeCommand('mjml.previewToSide');
+}
 
 
 export function activate(context: vscode.ExtensionContext) {
@@ -92,12 +117,82 @@ export function activate(context: vscode.ExtensionContext) {
 	console.log('Congratulations, your extension "decameron" is now active!');
 
 	let testChannel = vscode.window.createOutputChannel("TestChannel");
-
+	
 	let disposable = vscode.commands.registerCommand('decameron.plantillas', async () => {
-
+		
 		let dest : string;
 		const path = vscode.workspace.workspaceFolders![0].uri.path;
+
+		let startTime = performance.now();
+
 		let foldersCurrtentWorkspace : vscode.QuickPickItem[] = listOfFolders(path.substring(1));
+
+		var endTime = performance.now();
+
+		console.log(`Tiempo tomado para ver las carpetas ${endTime - startTime} milisegundos`);
+
+		let test : String = `<label for="">Seleccionar carpeta</label>
+		<select name="" id="folder">
+			<option value="opcion1">opcion1</option>
+		</select>`;
+
+		// webviewtest
+
+		// function getWebviewContent() {
+		// 	return `<!DOCTYPE html>
+		// 	<html lang="en">
+		// 	<head>
+		// 		<meta charset="UTF-8">
+		// 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		// 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		// 		<title>Document</title>
+		// 	</head>
+		// 	<style>
+		// 		form{
+		// 			display: flex;
+		// 			flex-direction: column;
+		// 		}
+		// 	</style>
+		// 	<body>
+		// 		<p>${path}</p>
+		// 		<h1>Crear Plantilla decameron</h1>
+		// 		<form action="">
+		// 			<label for="">Seleccionar carpeta</label>
+		// 			<select id="my-dropdown">
+		// 				${options(foldersCurrtentWorkspace)}
+		// 			</select>
+		// 			<label for="">Seleccionar plantilla</label>
+		// 			<select name="" id="">
+		// 				${options(listOfTemplates)}
+		// 			</select>
+		// 			<label for="">Día de la plantilla</label>
+		// 			<input type="number" name="" id="">
+		// 			<label for="">Link del primera imagen</label>
+		// 			<input type="text" name="" id="">
+		// 			<label for="">Terminos y condiciones</label>
+		// 			<input type="text" name="" id="">
+		// 			<button type="submit">Crear plantilla</button>
+		// 		</form>
+		// 		<script>
+		// 			console.log('test');
+		// 		</script>
+		// 	</body>
+		// 	</html>`;
+		//   }
+
+		// // Create and show panel
+		// const panel = vscode.window.createWebviewPanel(
+		// 	'catCoding',
+		// 	'Cat Coding',
+		// 	vscode.ViewColumn.Two,
+		// 	{}
+		//   );
+	
+		//   // And set its HTML content
+		//   panel.webview.html = getWebviewContent();
+		
+		// webviewtest
+
 		
 		//escoger carpeta	
 		const selectFolder = await vscode.window.showQuickPick(foldersCurrtentWorkspace, {placeHolder: 'Selecciona la capeta destino'});
@@ -127,19 +222,10 @@ export function activate(context: vscode.ExtensionContext) {
 			}else{
 				dest = selectFolder!.label + "/" + template!.label + texto + ".mjml";
 			}
-	
-			//ejecutar
+			
 			copyFile(vscode, context, testChannel, '/templates/' + template!.label + '.mjml', dest, function(err : any, res : any) {});
-	
-			//open file
-			const files = await vscode.workspace.findFiles(`**/${template!.label + texto + ".mjml"}`);
-			if (files.length > 0) {
-				const document = await vscode.workspace.openTextDocument(files[files.length - 1]);
-				await vscode.window.showTextDocument(document);
-				vscode.commands.executeCommand('mjml.previewToSide');
-			} else {
-				vscode.window.showInformationMessage(`No se pudo abri el archivo "${template!.label + texto + ".mjml"}". (reportar error)`);
-			}
+
+			openFile(template.label, texto);	
 				
 			// Display a message box to the user
 			vscode.window.showInformationMessage(template!.label + " creado");

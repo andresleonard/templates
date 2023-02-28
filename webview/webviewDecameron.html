@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    form{
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+<body>
+    <h1>Crear Plantilla decameron</h1>
+    <form action="">
+        <label for="">Seleccionar carpeta</label>
+        <select name="" id="folder">
+            <option value="opcion1">opcion1</option>
+        </select>
+        <label for="">Seleccionar plantilla</label>
+        <select name="" id="">
+            <option value="opcion1">opcion1</option>
+        </select>
+        <label for="">Día de la plantilla</label>
+        <input type="number" name="" id="">
+        <label for="">Link del primera imagen</label>
+        <input type="text" name="" id="">
+        <label for="">Terminos y condiciones</label>
+        
+        <button type="submit">Crear plantilla</button>
+    </form>
+    <script>
+        let folder = document.getElementById('folder');
+        let htmlString = ""
+
+        for (let i = 0; i < 15; i++) {
+            htmlString += "<option value='opcion1'>" + i + "</option>";
+        }
+
+        folder.innerHTML = htmlString;
+    </script>
+</body>
+</html>
