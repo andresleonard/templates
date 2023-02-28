@@ -2,6 +2,7 @@ import * as vscode from 'vscode';
 import * as fs from 'fs';
 import * as pathh from 'path';
 import { performance } from 'perf_hooks';
+import { HelloWorldPanel } from "./panels/HelloWorldPanel";
 
 //webview toolkit
 // import { provideVSCodeDesignSystem, vsCodeOption, vsCodeDropdown } from "@vscode/webview-ui-toolkit";
@@ -126,7 +127,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	let testChannel = vscode.window.createOutputChannel("TestChannel");
 	
-	let disposable = vscode.commands.registerCommand('decameron.plantillas', async () => {
+	const disposable = vscode.commands.registerCommand('decameron.plantillas', async () => {
 		
 		let dest : string;
 		const path = vscode.workspace.workspaceFolders![0].uri.path;
@@ -242,7 +243,12 @@ export function activate(context: vscode.ExtensionContext) {
 
 	});
 
-	context.subscriptions.push(disposable);
+	
+	const helloCommand = vscode.commands.registerCommand("decameron.form", () => {
+		HelloWorldPanel.render(context.extensionUri);
+	});
+
+	context.subscriptions.push(disposable, helloCommand);
 }
 
 // This method is called when your extension is deactivated
