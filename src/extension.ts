@@ -108,7 +108,15 @@ async function openFile( template : string, texto : string ){;
 	const files = await vscode.workspace.findFiles(`**/${ template + texto + ".mjml"}`);
 	const document = await vscode.workspace.openTextDocument(files[files.length - 1]);
 	await vscode.window.showTextDocument(document);
+
+	let startTime = performance.now();
+
 	vscode.commands.executeCommand('mjml.previewToSide');
+
+	var endTime = performance.now();
+
+	console.log(`Tiempo tomado para ver las carpetas ${endTime - startTime} milisegundos`);
+
 }
 
 

@@ -2668,10 +2668,10 @@
             "    <mj-section padding=\"0px\">",
             "      <mj-group>",
             "        <mj-column>",
-            "          <mj-image src=\"https://s3.amazonaws.com/imagesrepository.icommarketing.com/ImagesRepo/NDAwLTYzMi1kZWNhbWVyb25jbw2/632/Mailing/CO/2022/Enero/13/Mail-14-ENE-CO_05.gif\" width=\"300px\" alt=\"AMAZONAS\" padding=\"0px\" css-class=\"promotion-house\" href=\"https://www.decameron.com/es/co-promociones/weekend-sale/amazonas?utm_source=newsletter&utm_medium=email&utm_campaign=co-Ene22-decameron-weekend_sale-perf&utm_term=promociones-conv-na-imagen-na&utm_content=amazonas-envio1\"></mj-image>",
+            "          <mj-image src=\"https://s3.amazonaws.com/imagesrepository.icommarketing.com/ImagesRepo/NDAwLTYzMi1kZWNhbWVyb25jbw2/632/Mailing/CO/2022/Enero/13/Mail-14-ENE-CO_05.gif\" width=\"300px\" alt=\"\" padding=\"0px\" css-class=\"promotion-house\" href=\"\"></mj-image>",
             "        </mj-column>",
             "        <mj-column>",
-            "          <mj-image src=\"https://s3.amazonaws.com/imagesrepository.icommarketing.com/ImagesRepo/NDAwLTYzMi1kZWNhbWVyb25jbw2/632/Mailing/CO/2022/Enero/13/Mail-14-ENE-CO_06.gif\" width=\"300px\" alt=\"EJE CAFETERO\" padding=\"0px\" href=\"https://www.decameron.com/es/co-promociones/weekend-sale/eje-cafetero?utm_source=newsletter&utm_medium=email&utm_campaign=co-Ene22-decameron-weekend_sale-perf&utm_term=promociones-conv-na-imagen-na&utm_content=eje_cafetero-envio1\"></mj-image>",
+            "          <mj-image src=\"https://s3.amazonaws.com/imagesrepository.icommarketing.com/ImagesRepo/NDAwLTYzMi1kZWNhbWVyb25jbw2/632/Mailing/CO/2022/Enero/13/Mail-14-ENE-CO_06.gif\" width=\"300px\" alt=\"\" padding=\"0px\" href=\"\"></mj-image>",
             "        </mj-column>",
             "      </mj-group>",
             "    </mj-section>",
@@ -2722,14 +2722,11 @@
     "sección" : {        
         "prefix": "decameronSección",
         "body": [
-            "<mj-section padding=\"0px\">",
-            "<mj-column>",
-            "<mj-image width=\"600px\" src=\"https://s3.amazonaws.com/imagesrepository.icommarketing.com/ImagesRepo/NDAwLTYzMi1kZWNhbWVyb25jbw2/632/Mailing/CO/2022/Noviembre/30/Mail-30-NOV-CO2_01.gif\" ",
-            "alt=\"\"",
-            "HASTA 50% off\" ",
-            "padding=\"0px\" href=\"\"></mj-image>",
-            "</mj-column>",
-            "</mj-section>"
+            "    <mj-section padding=\"0px\">",
+            "      <mj-column>",
+            "        <mj-image width=\"600px\" src=\"https://s3.amazonaws.com/imagesrepository.icommarketing.com/ImagesRepo/NDAwLTYzMi1kZWNhbWVyb25jbw2/632/Mailing/CO/2022/Noviembre/30/Mail-30-NOV-CO2_01.gif\" alt=\"\" padding=\"0px\" href=\"\"></mj-image>",
+            "      </mj-column>",
+            "    </mj-section>"
         ],
         "description": "Plantilla sección"
     }
